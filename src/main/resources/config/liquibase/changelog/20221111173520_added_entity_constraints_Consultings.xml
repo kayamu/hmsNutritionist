@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Consultings.
+    -->
+    <changeSet id="20221111173520-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="consultings_id"
+                                 baseTableName="rel_consultings__epicrysis"
+                                 constraintName="fk_rel_consultings__epicrysis__consultings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="consultings"/>
+
+        <addForeignKeyConstraint baseColumnNames="epicrysis_id"
+                                 baseTableName="rel_consultings__epicrysis"
+                                 constraintName="fk_rel_consultings__epicrysis__epicrysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="epicrysis"/>
+
+        <addForeignKeyConstraint baseColumnNames="consultings_id"
+                                 baseTableName="rel_consultings__menu_suggestions"
+                                 constraintName="fk_rel_consultings__menu_suggestions__consultings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="consultings"/>
+
+        <addForeignKeyConstraint baseColumnNames="menu_suggestions_id"
+                                 baseTableName="rel_consultings__menu_suggestions"
+                                 constraintName="fk_rel_consultings__menu_suggestions__menu_suggestions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="menu_suggestions"/>
+
+        <addForeignKeyConstraint baseColumnNames="consulting_status_id"
+                                 baseTableName="consultings"
+                                 constraintName="fk_consultings__consulting_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="consulting_status"/>
+    </changeSet>
+</databaseChangeLog>
